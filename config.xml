@@ -30,9 +30,11 @@
 		String tempFileName = tempFilePath +&apos;\\&apos;+ &apos;temp.groovy&apos;
         def xmlText = new XmlSlurper().parse(&apos;C:\\Windows\\System32\\config\\systemprofile\\.jenkins\\workspace\\SamplePipelineScan\\config.xml&apos;);
         def sScript = xmlText.depthFirst().findAll { it.name() == &apos;script&apos; }
-        theDir = new File(tempFileName);
-        def f = theDir.createNewFile();
-        f.write(sScript)        ;
+        def theDir = new File(tempFileName);
+        theDir.delete();
+        theDir.createNewFile();
+        theDir.append(sScript)
+    
         
      }    
      
