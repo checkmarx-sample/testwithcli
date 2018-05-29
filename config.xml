@@ -36,12 +36,10 @@
      }    
      
     stage (&apos;Vulnerability&apos;) {
-        def db = groovy.sql.Sql.newInstance(
-                &quot;jdbc:postgresql://localhost:5432/$database&quot;,
-                &apos;postgres&apos;,
-                &apos;postgres&apos;,
-                &apos;org.postgresql.Driver&apos;
-            )
+        steps {
+        String password=&quot;ABD&quot; 
+        bat &apos;C:\\share\\Groovy\\pipelinsample\\sample.cmd&apos;
+        }
 
     }
     stage (&apos;Scan&apos;){
