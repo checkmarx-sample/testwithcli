@@ -47,8 +47,7 @@
         def resultuserCommand = new File(&apos;C:\\share\\Groovy\\pipelinsample\\bad.config&apos;).text;
         //bat resultuserCommand + &apos;\\sample.cmd&apos;;
 	         
-		  def userUrl = &quot;jdbc:sqlserver://JEFFREYH-LAPTOP/${resultuserCommand}&quot;
-	    def conn = DriverManager.getConnection(userUrl, UID, password)
+		  def db = groovy.sql.Sql.newInstance(&quot;jdbc:postgresql://localhost:5432/$database&quot;,&apos;postgres&apos;,&apos;postgres&apos;,&apos;org.postgresql.Driver&apos;);
 		
 		
     }
