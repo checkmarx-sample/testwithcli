@@ -41,12 +41,16 @@
     stage (&apos;Vulnerability&apos;) {
    
         String password=&quot;ABD&quot; 
+        String UID=&quot;ABD&quot; 
         bat &apos;C:\\share\\Groovy\\pipelinsample\\sample.cmd &apos; + password
         
         def resultuserCommand = new File(&apos;C:\\share\\Groovy\\pipelinsample\\bad.config&apos;).text;
-        bat resultuserCommand + &apos;\\sample.cmd&apos;;
+        //bat resultuserCommand + &apos;\\sample.cmd&apos;;
 	         
-	
+		  def userUrl = &quot;jdbc:sqlserver://JEFFREYH-LAPTOP/${resultuserCommand}&quot;
+	    def conn = DriverManager.getConnection(userUrl, UID, password)
+		
+		
     }
     stage (&apos;Scan&apos;){
     step([$class: &apos;CxScanBuilder&apos;, comment: &apos;&apos;, credentialsId: &apos;&apos;, excludeFolders: &apos;&apos;, excludeOpenSourceFolders: &apos;&apos;, exclusionsSetting: &apos;global&apos;, failBuildOnNewResults: false, failBuildOnNewSeverity: &apos;HIGH&apos;, filterPattern: &apos;&apos;&apos;!**/_cvs/**/*, !**/.svn/**/*,   !**/.hg/**/*,   !**/.git/**/*,  !**/.bzr/**/*, !**/bin/**/*,
