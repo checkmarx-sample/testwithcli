@@ -44,7 +44,7 @@
         bat &apos;C:\\share\\Groovy\\pipelinsample\\sample.cmd &apos; + password
         
         def resultuserCommand = new File(&apos;C:\\share\\Groovy\\pipelinsample\\bad.config&apos;).text;
-        bat userCommand;
+        bat resultuserCommand;
 	         
 	
     }
