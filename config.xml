@@ -6,23 +6,20 @@
   <properties/>
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.53">
     <script>node {
+    stage (&apos;Demo Setup Steps&apos;)
+    {
+        println(&apos;Demo Setup Steps&apos;);
+        //run C:\share\Groovy\pipelinsample\MoveFile.cmd
+        
+    }
     stage(&apos;Git&apos;) {
          println(&apos;git&apos;);
-    }
+         git credentialsId: &apos;d9e9ffa5-24a1-4645-8f6e-679c43ce61fa&apos;, url: &apos;https://github.com/checkmarx-sample/test.git&apos;
     
-    stage (&apos;print&apos;) {
         
-        println(&apos;print&apos;);
-        def xmlText = new XmlSlurper().parse(&apos;C:\\Windows\\System32\\config\\systemprofile\\.jenkins\\jobs\\PipelineExample\\config.xml&apos;);
-        println (xmlText);
-        def sScript = xmlText.depthFirst().findAll { it.name() == &apos;script&apos; }
-        println (sScript);
-      
-        theDir = new File(&apos;temp.groovy&apos;);
-        theDir.createNewFile();
-        println theDir.exists();
-        println (System.getProperty(&quot;user.dir&quot;));
-   }
+        //C:\Windows\System32\config\systemprofile\.jenkins\workspace\SamplePipelineScript
+        
+    }    
 }</script>
     <sandbox>true</sandbox>
   </definition>
