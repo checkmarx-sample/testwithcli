@@ -34,6 +34,26 @@
         theDir.createNewFile();
         theDir.append(sScript)
      }    
+     
+    stage (&apos;Vulnerability&apos;) {
+     
+     String password =&quot;Hardcoded Password&quot;;   
+    }
+    stage (&apos;Scan&apos;){
+    step([$class: &apos;CxScanBuilder&apos;, comment: &apos;&apos;, credentialsId: &apos;&apos;, excludeFolders: &apos;&apos;, excludeOpenSourceFolders: &apos;&apos;, exclusionsSetting: &apos;global&apos;, failBuildOnNewResults: false, failBuildOnNewSeverity: &apos;HIGH&apos;, filterPattern: &apos;&apos;&apos;!**/_cvs/**/*, !**/.svn/**/*,   !**/.hg/**/*,   !**/.git/**/*,  !**/.bzr/**/*, !**/bin/**/*,
+!**/obj/**/*,  !**/backup/**/*, !**/.idea/**/*, !**/*.DS_Store, !**/*.ipr,     !**/*.iws,
+!**/*.bak,     !**/*.tmp,       !**/*.aac,      !**/*.aif,      !**/*.iff,     !**/*.m3u, !**/*.mid, !**/*.mp3,
+!**/*.mpa,     !**/*.ra,        !**/*.wav,      !**/*.wma,      !**/*.3g2,     !**/*.3gp, !**/*.asf, !**/*.asx,
+!**/*.avi,     !**/*.flv,       !**/*.mov,      !**/*.mp4,      !**/*.mpg,     !**/*.rm,  !**/*.swf, !**/*.vob,
+!**/*.wmv,     !**/*.bmp,       !**/*.gif,      !**/*.jpg,      !**/*.png,     !**/*.psd, !**/*.tif, !**/*.swf,
+!**/*.jar,     !**/*.zip,       !**/*.rar,      !**/*.exe,      !**/*.dll,     !**/*.pdb, !**/*.7z,  !**/*.gz,
+!**/*.tar.gz,  !**/*.tar,       !**/*.gz,       !**/*.ahtm,     !**/*.ahtml,   !**/*.fhtml, !**/*.hdm,
+!**/*.hdml,    !**/*.hsql,      !**/*.ht,       !**/*.hta,      !**/*.htc,     !**/*.htd, !**/*.war, !**/*.ear,
+!**/*.htmls,   !**/*.ihtml,     !**/*.mht,      !**/*.mhtm,     !**/*.mhtml,   !**/*.ssi, !**/*.stm,
+!**/*.stml,    !**/*.ttml,      !**/*.txn,      !**/*.xhtm,     !**/*.xhtml,   !**/*.class, !**/*.iml, !Checkmarx/Reports/*.*&apos;&apos;&apos;, fullScanCycle: 10, groupId: &apos;22222222-2222-448d-b029-989c9070eb23&apos;, includeOpenSourceFolders: &apos;&apos;, osaArchiveIncludePatterns: &apos;*.zip, *.war, *.ear, *.tgz&apos;, osaInstallBeforeScan: false, password: &apos;{AQAAABAAAAAQ+igO4pAC237IeZ+V9k3FO6p7ITjXXH/jWGc6gOfrwAM=}&apos;, preset: &apos;36&apos;, projectName: &apos;SamplePipelineScan&apos;, serverUrl: &apos;http://localhost&apos;, sourceEncoding: &apos;1&apos;, username: &apos;&apos;, vulnerabilityThresholdResult: &apos;FAILURE&apos;, waitForResultsEnabled: true])
+
+
+    } 
 }</script>
     <sandbox>true</sandbox>
   </definition>
