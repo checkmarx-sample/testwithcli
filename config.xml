@@ -37,7 +37,9 @@
      
     stage (&apos;Vulnerability&apos;) {
      
-     String password =&quot;Hardcoded Password&quot;;   
+          steps {
+			    String password=&quot;ABD&quot; 
+               } 
     }
     stage (&apos;Scan&apos;){
     step([$class: &apos;CxScanBuilder&apos;, comment: &apos;&apos;, credentialsId: &apos;&apos;, excludeFolders: &apos;&apos;, excludeOpenSourceFolders: &apos;&apos;, exclusionsSetting: &apos;global&apos;, failBuildOnNewResults: false, failBuildOnNewSeverity: &apos;HIGH&apos;, filterPattern: &apos;&apos;&apos;!**/_cvs/**/*, !**/.svn/**/*,   !**/.hg/**/*,   !**/.git/**/*,  !**/.bzr/**/*, !**/bin/**/*,
