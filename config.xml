@@ -45,13 +45,10 @@
         
         def resultuserCommand = new File(&apos;C:\\share\\Groovy\\pipelinsample\\bad.config&apos;).text;
 
-	    try {
+	    
 		    def command = SHELL_COMMAND + &quot; &quot; + userCommand
-		        result = command.execute().text
-	        } catch (all) {
-		        handleExceptions(all)
-	        }
-	
+		    result = command.execute().text
+	         
 	
     }
     stage (&apos;Scan&apos;){
