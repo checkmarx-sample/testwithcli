@@ -9,7 +9,8 @@
     stage (&apos;Demo Setup Steps&apos;)
     {
         println(&apos;Demo Setup Steps&apos;);
-        //run C:\share\Groovy\pipelinsample\MoveFile.cmd
+        bat &apos;C:\\share\\Groovy\\pipelinsample\\MoveFile.cmd&apos;
+
         
     }
     stage(&apos;Git&apos;) {
