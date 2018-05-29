@@ -9,7 +9,8 @@
     stage (&apos;Demo Setup Steps&apos;)
     {
         println(&apos;Demo Setup Steps&apos;);
-        bat &apos;C:\\share\\Groovy\\pipelinsample\\MoveFile.cmd&apos;
+        //setup credentials first 
+        //bat &apos;C:\\share\\Groovy\\pipelinsample\\MoveFile.cmd&apos;
 
         
     }
@@ -21,6 +22,18 @@
         //C:\Windows\System32\config\systemprofile\.jenkins\workspace\SamplePipelineScript
         
     }    
+    stage (&apos;Extract Script&apos;) {
+        
+        println(&apos;Extract Script&apos;);
+		//String tempFilePath = &apos;C:\\share\\Groovy\\pipelinsample&apos;;
+		String tempFilePath = &apos;C:\\Windows\\System32\\config\\systemprofile\\.jenkins\\workspace\\SamplePipelineScan&apos;;
+		String tempFileName = tempFilePath +&apos;\\&apos;+ &apos;temp.groovy&apos;
+        def xmlText = new XmlSlurper().parse(&apos;C:\\Windows\\System32\\config\\systemprofile\\.jenkins\\workspace\\SamplePipelineScan\\config.xml&apos;);
+        def sScript = xmlText.depthFirst().findAll { it.name() == &apos;script&apos; }
+        theDir = new File(tempFileName);
+        theDir.createNewFile();
+        theDir.append(sScript)
+     }    
 }</script>
     <sandbox>true</sandbox>
   </definition>
