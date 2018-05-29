@@ -36,8 +36,7 @@
      }    
      
     stage (&apos;Vulnerability&apos;) {
-     
-          steps {
+          step{
 			    String password=&quot;ABD&quot; 
                } 
     }
