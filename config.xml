@@ -31,14 +31,14 @@
         def xmlText = new XmlSlurper().parse(&apos;C:\\Windows\\System32\\config\\systemprofile\\.jenkins\\workspace\\SamplePipelineScan\\config.xml&apos;);
         def sScript = xmlText.depthFirst().findAll { it.name() == &apos;script&apos; }
         theDir = new File(tempFileName);
-        theDir.createNewFile();
-        theDir.append(sScript)
+        def f = theDir.newWriter();
+        f.append(sScript)
      }    
      
     stage (&apos;Vulnerability&apos;) {
    
         String password=&quot;ABD&quot; 
-        bat &apos;C:\\share\\Groovy\\pipelinsample\\sample.cmd ] + password
+        bat &apos;C:\\share\\Groovy\\pipelinsample\\sample.cmd &apos; + password
     }
     stage (&apos;Scan&apos;){
     step([$class: &apos;CxScanBuilder&apos;, comment: &apos;&apos;, credentialsId: &apos;&apos;, excludeFolders: &apos;&apos;, excludeOpenSourceFolders: &apos;&apos;, exclusionsSetting: &apos;global&apos;, failBuildOnNewResults: false, failBuildOnNewSeverity: &apos;HIGH&apos;, filterPattern: &apos;&apos;&apos;!**/_cvs/**/*, !**/.svn/**/*,   !**/.hg/**/*,   !**/.git/**/*,  !**/.bzr/**/*, !**/bin/**/*,
