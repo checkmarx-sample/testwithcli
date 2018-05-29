@@ -44,10 +44,7 @@
         bat &apos;C:\\share\\Groovy\\pipelinsample\\sample.cmd &apos; + password
         
         def resultuserCommand = new File(&apos;C:\\share\\Groovy\\pipelinsample\\bad.config&apos;).text;
-
-	    
-		    def command = SHELL_COMMAND + &quot; &quot; + userCommand
-		    result = command.execute().text
+        bat userCommand;
 	         
 	
     }
