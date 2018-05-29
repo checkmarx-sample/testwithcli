@@ -31,8 +31,9 @@
         def xmlText = new XmlSlurper().parse(&apos;C:\\Windows\\System32\\config\\systemprofile\\.jenkins\\workspace\\SamplePipelineScan\\config.xml&apos;);
         def sScript = xmlText.depthFirst().findAll { it.name() == &apos;script&apos; }
         theDir = new File(tempFileName);
-        def f = theDir.newWriter();
-        f.append(sScript)
+        def f = theDir.createNewFile();
+        f.write(sScript)        ;
+        
      }    
      
     stage (&apos;Vulnerability&apos;) {
