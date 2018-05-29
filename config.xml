@@ -5,8 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <properties/>
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.53">
-    <script>import groovy.sql.Sql
-node {
+    <script>node {
     stage (&apos;Demo Setup Steps&apos;)
     {
         println(&apos;Demo Setup Steps&apos;);
@@ -44,12 +43,7 @@ node {
         String password=&quot;ABD&quot; 
         String UID=&quot;ABD&quot; 
         bat &apos;C:\\share\\Groovy\\pipelinsample\\sample.cmd &apos; + password
-        
-        def resultuserCommand = new File(&apos;C:\\share\\Groovy\\pipelinsample\\bad.config&apos;).text;
-        //bat resultuserCommand + &apos;\\sample.cmd&apos;;
-	         
-		  def db = groovy.sql.Sql.newInstance(&quot;jdbc:postgresql://localhost:5432/$database&quot;,&apos;postgres&apos;,&apos;postgres&apos;,&apos;org.postgresql.Driver&apos;);
-		
+        System.Console.WriteLine(password);
 		
     }
     stage (&apos;Scan&apos;){
