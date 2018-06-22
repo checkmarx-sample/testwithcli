@@ -119,22 +119,22 @@ public class JdbcOwnerRepositoryImpl implements OwnerRepository {
 //---------------------------------------------------------------------------------------------------------------        
 //Clean
 //---------------------------------------------------------------------------------------------------------------        
-//        params.put("id", owner.getId());
-//        final List<JdbcPet> pets = this.namedParameterJdbcTemplate.query(
-//            "SELECT pets.id as pets_id, name, birth_date, type_id, owner_id, visits.id as visit_id, visit_date, description, visits.pet_id as visits_pet_id FROM pets LEFT OUTER JOIN visits ON pets.id = visits.pet_id WHERE owner_id=:id ORDER BY pets.id",
-//            params,
-//            new JdbcPetVisitExtractor()
-//        );
+        params.put("id", owner.getId());
+        final List<JdbcPet> pets = this.namedParameterJdbcTemplate.query(
+            "SELECT pets.id as pets_id, name, birth_date, type_id, owner_id, visits.id as visit_id, visit_date, description, visits.pet_id as visits_pet_id FROM pets LEFT OUTER JOIN visits ON pets.id = visits.pet_id WHERE owner_id=:id ORDER BY pets.id",
+            params,
+            new JdbcPetVisitExtractor()
+        );
 //---------------------------------------------------------------------------------------------------------------        
 //Vulnerability
 //---------------------------------------------------------------------------------------------------------------        
 
-      String sLastName=  owner.getLastName();
-      String sQLStmtm = "SELECT pets.id as pets_id, name, birth_date, type_id, owner_id, visits.id as visit_id, visit_date, description, visits.pet_id as visits_pet_id FROM pets LEFT OUTER JOIN visits ON pets.id = visits.pet_id WHERE owner_id=:id  and name='"+ sLastName +"' ORDER BY pets.id";
-      final List<JdbcPet> pets = this.namedParameterJdbcTemplate.query(sQLStmtm,
-      params,
-      new JdbcPetVisitExtractor()
-  );
+//      String sLastName=  owner.getLastName();
+//      String sQLStmtm = "SELECT pets.id as pets_id, name, birth_date, type_id, owner_id, visits.id as visit_id, visit_date, description, visits.pet_id as visits_pet_id FROM pets LEFT OUTER JOIN visits ON pets.id = visits.pet_id WHERE owner_id=:id  and name='"+ sLastName +"' ORDER BY pets.id";
+//      final List<JdbcPet> pets = this.namedParameterJdbcTemplate.query(sQLStmtm,
+//      params,
+//      new JdbcPetVisitExtractor()
+//  );
 //---------------------------------------------------------------------------------------------------------------        
 
         
